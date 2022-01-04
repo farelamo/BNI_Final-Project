@@ -20,8 +20,6 @@ import static org.mockito.Mockito.*;
 
 public class TestCategoryServiceImpl {
     private static EasyRandom EASY_RANDOM = new EasyRandom();
-    private static ModelMapper modelMapper = new ModelMapper();
-    private Long RANDOM_ID;
 
     @InjectMocks
     private CategoryServiceImpl categoryService;
@@ -34,11 +32,10 @@ public class TestCategoryServiceImpl {
     @BeforeEach
     public void setUp(){
         MockitoAnnotations.initMocks(this);
-        RANDOM_ID = EASY_RANDOM.nextLong();
     }
 
     @Test
-    public void getAll_WillReturnListProductOutput() {
+    public void getAll_WillReturnListCategoryOutput() {
         Iterable<Category> categories = EASY_RANDOM.objects(Category.class, 2)
                 .collect(Collectors.toList());
         when(categoryRepository.findAll()).thenReturn(categories);
@@ -47,7 +44,7 @@ public class TestCategoryServiceImpl {
 
         List<CategoryOutput> outputs = new ArrayList<>();
         for (Category product: categories) {
-            outputs.add(modelMapper.map(product, CategoryOutput.class));
+            outputs.add(mapper.map(product, CategoryOutput.class));
         }
         verify(categoryRepository, times(1)).findAll();
         assertEquals(outputs, result);
