@@ -1,5 +1,5 @@
 # BNI_Final-Project
 
-![screenshot](mvp-resources/ERD.png)
+![screenshot](mvp-resource/ERD.png)
 
 
