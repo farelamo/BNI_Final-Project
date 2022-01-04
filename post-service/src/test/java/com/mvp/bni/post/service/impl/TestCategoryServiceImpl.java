@@ -1,10 +1,7 @@
 package com.mvp.bni.post.service.impl;
 import com.mvp.bni.post.dto.output.CategoryOutput;
-import com.mvp.bni.post.dto.output.PostOutput;
 import com.mvp.bni.post.model.Category;
 import com.mvp.bni.post.repository.CategoryRepository;
-import org.antlr.stringtemplate.language.Cat;
-import org.assertj.core.api.Assert;
 import org.jeasy.random.EasyRandom;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
