@@ -1,3 +1,3 @@
 # BNI_Final-Project
 
-![HLA](resource-mvp/High Level Architecture.png?raw=true)
+![HLA](https://github.com/farelamo/BNI_Final-Project.gitresource-mvp/High Level Architecture.png)
