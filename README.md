@@ -1,3 +1,3 @@
 # BNI_Final-Project
 
-![HLA](resource-mvp/High Level Architecture.png)
+![HLA](High Level Architecture.png)
