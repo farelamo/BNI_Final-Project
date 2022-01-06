@@ -22,7 +22,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class SecurityFilter extends OncePerRequestFilter {
     private static final String JWT_HEADER = "Authorization";
-    private static final String JWT_TOKEN_PREFIX = "Bearer  ";
+    private static final String JWT_TOKEN_PREFIX = "Bearer ";
 
     private final UserDetailsService userDetailsService;
     private final JwtTokenProvider jwtTokenProvider;
@@ -30,7 +30,7 @@ public class SecurityFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try{
-            String token = getJWTFromRequest(request);
+            String token = getJWTFromRequest(request); //getJWT
             if(token != null && !token.isBlank() && jwtTokenProvider.validateToken(token)){
                 String username = jwtTokenProvider.getUsername(token);
                 log.info("username: {}", username);

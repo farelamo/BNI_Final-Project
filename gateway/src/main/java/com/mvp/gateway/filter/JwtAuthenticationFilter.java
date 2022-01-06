@@ -52,7 +52,6 @@ public class JwtAuthenticationFilter implements GatewayFilter {
     }
 
     private String getJWTFromRequest(HttpRequest request){
-//        String bearerToken = request.getHeaders().getOrEmpty(JWT_HEADER).get(0);
         String bearerToken = request.getHeaders().getFirst(JWT_HEADER);
         log.info(bearerToken);
         if(StringUtils.hasText(bearerToken) && bearerToken.startsWith(JWT_TOKEN_PREFIX)){
