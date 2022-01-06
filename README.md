@@ -1,3 +1,9 @@
 # BNI_Final-Project
 
-![HLA](https://github.com/farelamo/BNI_Final-Project.git/resource-mvp/High-Level-Architecture.png?raw=true)
+# High Level Architecture
+![screenshot](resource-mvp/High-Level-Architecture.png)
+
+# ERD
+![screenshot](resource-mvp/ERD.png)
+
+
