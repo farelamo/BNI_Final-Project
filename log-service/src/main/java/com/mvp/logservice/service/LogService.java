@@ -6,6 +6,6 @@ import com.mvp.logservice.model.Log;
 import org.springframework.http.ResponseEntity;
 
 public interface LogService {
-    Log create(LogInput input);
+    Log create(String input);
     ResponseEntity<BaseResponse> getAll();
 }

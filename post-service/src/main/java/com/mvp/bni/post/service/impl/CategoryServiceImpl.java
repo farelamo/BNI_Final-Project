@@ -19,6 +19,7 @@ import java.util.Optional;
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository repository;
     private final ModelMapper mapper;
+    private final LogService logService;
 
     @Override
     public CategoryOutput getOne(Long id) {
@@ -46,6 +47,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void addOne(CategoryInput input) {
         Category category = mapper.map(input, Category.class);
         category.setId(null);
+        logService.send(input.toString());
         this.repository.save(category);
     }
 

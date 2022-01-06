@@ -16,10 +16,10 @@ public class KafkaServiceImpl implements KafkaService {
     private final LogService logService;
 
     @KafkaListener(topics = topic, groupId = groupId)
-    @Override
     public void listen(String message) {
-        Gson g = new Gson();
-        LogInput logInput = g.fromJson(message, LogInput.class);
-        logService.create(logInput);
+//        Gson g = new Gson();
+//        LogInput logInput = g.fromJson(message, LogInput.class);
+        System.out.println(message);
+        logService.create(message);
     }
 }

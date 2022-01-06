@@ -22,8 +22,11 @@ public class LogServiceImpl implements LogService {
     private final LogRepository logRepository;
 
     @Override
-    public Log create(LogInput input){
-        Log log = this.mapper.map(input, Log.class);
+    public Log create(String input){
+        Log log = Log.builder()
+                .data(input)
+                .build();
+//        Log log = this.mapper.map(input, Log.class);
         log.setDate();
         logRepository.save(log);
         return log;

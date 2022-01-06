@@ -16,7 +16,7 @@ public class LogController {
     private final LogService logService;
 
     @PostMapping
-    public ResponseEntity<?> create(@RequestBody LogInput input){
+    public ResponseEntity<?> create(@RequestBody String input){
         Log logCreated = logService.create(input);
         return ResponseEntity.ok(logCreated);
     }

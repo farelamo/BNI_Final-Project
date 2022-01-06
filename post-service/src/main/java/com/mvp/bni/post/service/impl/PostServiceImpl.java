@@ -22,6 +22,7 @@ public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
     private final ModelMapper mapper;
     private final CategoryRepository categoryRepository;
+    private final LogService logService;
 
     @Override
     public PostOutput getOne(Long id) {
@@ -86,6 +87,7 @@ public class PostServiceImpl implements PostService {
         Post post = mapper.map(input, Post.class);
         post.setId(null);
         post.setCategory(temp);
+        logService.send(input.toString());
         postRepository.save(post);
     }
 

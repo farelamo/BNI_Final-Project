@@ -16,7 +16,7 @@ public class Log {
 
     private String name;
 
-    private Object data;
+    private String data;
 
     protected Date created_at;
 

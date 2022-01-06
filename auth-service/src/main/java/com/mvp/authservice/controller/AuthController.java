@@ -42,14 +42,4 @@ public class AuthController {
         logService.send("user berhasil login !!");
         return ResponseEntity.ok(new BaseResponse<>(token));
     }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(code = HttpStatus.BAD_REQUEST)
-    @ResponseBody
-    public BaseResponse<?> handleValidationError(MethodArgumentNotValidException ex) {
-        BindingResult bindingResult = ex.getBindingResult();
-        FieldError fieldError = bindingResult.getFieldError();
-        String defaultMessage = fieldError.getDefaultMessage();
-        return new BaseResponse<>(false, defaultMessage);
-    }
 }
